@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		833B813924AA22010009001C /* BookListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B813324AA22010009001C /* BookListPresenter.swift */; };
+		833B813A24AA22010009001C /* BookListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B813424AA22010009001C /* BookListWorker.swift */; };
+		833B813B24AA22010009001C /* BookListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B813524AA22010009001C /* BookListRouter.swift */; };
+		833B813C24AA22010009001C /* BookListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B813624AA22010009001C /* BookListModels.swift */; };
+		833B813D24AA22010009001C /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B813724AA22010009001C /* BookListViewController.swift */; };
+		833B813E24AA22010009001C /* BookListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B813824AA22010009001C /* BookListInteractor.swift */; };
+		83DADBCC24AB35A500B8BBD6 /* BookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DADBCB24AB35A400B8BBD6 /* BookListTableViewCell.swift */; };
 		83DF512824A8D7080039AAFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF512724A8D7080039AAFC /* AppDelegate.swift */; };
 		83DF512A24A8D7080039AAFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF512924A8D7080039AAFC /* SceneDelegate.swift */; };
-		83DF512C24A8D7080039AAFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF512B24A8D7080039AAFC /* ViewController.swift */; };
 		83DF512F24A8D7080039AAFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF512D24A8D7080039AAFC /* Main.storyboard */; };
 		83DF513124A8D7090039AAFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DF513024A8D7090039AAFC /* Assets.xcassets */; };
 		83DF513424A8D7090039AAFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF513224A8D7090039AAFC /* LaunchScreen.storyboard */; };
@@ -17,10 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		833B813324AA22010009001C /* BookListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListPresenter.swift; sourceTree = "<group>"; };
+		833B813424AA22010009001C /* BookListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListWorker.swift; sourceTree = "<group>"; };
+		833B813524AA22010009001C /* BookListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListRouter.swift; sourceTree = "<group>"; };
+		833B813624AA22010009001C /* BookListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListModels.swift; sourceTree = "<group>"; };
+		833B813724AA22010009001C /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		833B813824AA22010009001C /* BookListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListInteractor.swift; sourceTree = "<group>"; };
+		83DADBCB24AB35A400B8BBD6 /* BookListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewCell.swift; sourceTree = "<group>"; };
 		83DF512424A8D7080039AAFC /* CleanSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF512724A8D7080039AAFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DF512924A8D7080039AAFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83DF512B24A8D7080039AAFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		83DF512E24A8D7080039AAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83DF513024A8D7090039AAFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83DF513324A8D7090039AAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83DADBCD24AC243A00B8BBD6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		83DF511B24A8D7080039AAFC = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +80,7 @@
 				83DF513B24A8D7360039AAFC /* Scenes */,
 				83DF512724A8D7080039AAFC /* AppDelegate.swift */,
 				83DF512924A8D7080039AAFC /* SceneDelegate.swift */,
-				83DF512B24A8D7080039AAFC /* ViewController.swift */,
+				83DADBCB24AB35A400B8BBD6 /* BookListTableViewCell.swift */,
 				83DF512D24A8D7080039AAFC /* Main.storyboard */,
 				83DF513024A8D7090039AAFC /* Assets.xcassets */,
 				83DF513224A8D7090039AAFC /* LaunchScreen.storyboard */,
@@ -73,6 +92,7 @@
 		83DF513B24A8D7360039AAFC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				83DADBCD24AC243A00B8BBD6 /* Test */,
 				83DF513C24A8D79F0039AAFC /* ListBooks */,
 			);
 			path = Scenes;
@@ -81,6 +101,12 @@
 		83DF513C24A8D79F0039AAFC /* ListBooks */ = {
 			isa = PBXGroup;
 			children = (
+				833B813724AA22010009001C /* BookListViewController.swift */,
+				833B813824AA22010009001C /* BookListInteractor.swift */,
+				833B813324AA22010009001C /* BookListPresenter.swift */,
+				833B813624AA22010009001C /* BookListModels.swift */,
+				833B813424AA22010009001C /* BookListWorker.swift */,
+				833B813524AA22010009001C /* BookListRouter.swift */,
 			);
 			path = ListBooks;
 			sourceTree = "<group>";
@@ -161,7 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DF512C24A8D7080039AAFC /* ViewController.swift in Sources */,
+				833B813C24AA22010009001C /* BookListModels.swift in Sources */,
+				833B813A24AA22010009001C /* BookListWorker.swift in Sources */,
+				833B813E24AA22010009001C /* BookListInteractor.swift in Sources */,
+				833B813924AA22010009001C /* BookListPresenter.swift in Sources */,
+				83DADBCC24AB35A500B8BBD6 /* BookListTableViewCell.swift in Sources */,
+				833B813B24AA22010009001C /* BookListRouter.swift in Sources */,
+				833B813D24AA22010009001C /* BookListViewController.swift in Sources */,
 				83DF512824A8D7080039AAFC /* AppDelegate.swift in Sources */,
 				83DF512A24A8D7080039AAFC /* SceneDelegate.swift in Sources */,
 			);
