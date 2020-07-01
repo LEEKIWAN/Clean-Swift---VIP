@@ -18,36 +18,29 @@ protocol BookListBusinessLogic {
 }
 
 protocol BookListDataStore {
-    var books: BookList.FetchBooks.ViewModel.Books? { get }
+    var bookList: BookList.FetchBooks.Response? { get }
 }
 
 class BookListInteractor: BookListBusinessLogic, BookListDataStore {
     
-    var books: BookList.FetchBooks.ViewModel.Books?
+    var bookList: BookList.FetchBooks.Response?
     
     var presenter: BookListPresentationLogic?
-//    var worker: BookListWorker?
-    //var name: String = ""
-    
-    // MARK: Do something
+    var worker: BookListWorker?
     
     func requestBookList(request: BookList.FetchBooks.Request) {
-//        worker = BookListWorker()
-//        worker?.doSomeWork()
-        
-        request.bookList { [weak self] (response) in
+        worker = BookListWorker()
+        worker?.requestBookList(completionHandler: { [weak self] (response) in
             guard let self = self else { return }
             switch response.result {
-            case .success(let books):
-                self.books = books
+            case .success(let result):
                 debugPrint(response)
-                let response = BookList.FetchBooks.Response(books: books)
-                self.presenter?.presentBookList(response: response)
-                
+                self.bookList = result
+                self.presenter?.presentBookList(response: result)
             case .failure(let error):
                 print(error)
             }
-        }
+        })
         
         
     }

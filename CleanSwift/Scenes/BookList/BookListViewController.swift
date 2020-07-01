@@ -19,7 +19,7 @@ protocol BookListDisplayLogic: class {
 class BookListViewController: UIViewController, BookListDisplayLogic {
 
     var interactor: BookListBusinessLogic?
-//    var router: (NSObjectProtocol & BookListRoutingLogic & BookListDataPassing)?
+    var router: (NSObjectProtocol & BookListRoutingLogic & BookListDataPassing)?
     
     // MARK: Object lifecycle
     
@@ -39,28 +39,29 @@ class BookListViewController: UIViewController, BookListDisplayLogic {
         let viewController = self
         let interactor = BookListInteractor()
         let presenter = BookListPresenter()
-//        let router = BookListRouter()
+        let router = BookListRouter()
         viewController.interactor = interactor
-//        viewController.router = router
+        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
-//        router.viewController = viewController
-//        router.dataStore = interactor
+        router.viewController = viewController
+        router.dataStore = interactor
     }
     
     // MARK: Routing
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let scene = segue.identifier {
-//            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-//            if let router = router, router.responds(to: selector) {
-//                router.perform(selector, with: segue)
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+                
+            }
+        }
+    }
     
     
-    var displayedBooks: [BookList.FetchBooks.ViewModel.Book]?
+    var displayedBooks: [Book]?
     
     // MARK: View lifecycle
     
@@ -69,9 +70,9 @@ class BookListViewController: UIViewController, BookListDisplayLogic {
         requestBookList()
     }
     
-    // MARK: Do something
+    // MARK: - Do something
     
-    //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     func requestBookList() {
         let request = BookList.FetchBooks.Request()
@@ -80,10 +81,25 @@ class BookListViewController: UIViewController, BookListDisplayLogic {
     
     func displayBookLists(viewModel: BookList.FetchBooks.ViewModel) {
         self.displayedBooks = viewModel.displayedBooks
+        self.tableView.reloadData()
     }
 
     
-//    func displaySomething(viewModel: BookList.FetchBooks.ViewModel) {
-//        nameTextField.text = viewModel.name
-//    }
+}
+
+extension BookListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayedBooks?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let displayedBook = displayedBooks![indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath) as! BookListTableViewCell
+        cell.titleLabel.text = displayedBook.title
+        cell.descriptionLabel.text = displayedBook.description
+        
+        return cell
+        
+    }
+    
 }
