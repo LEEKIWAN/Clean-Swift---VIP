@@ -16,8 +16,7 @@ protocol BookDetailDisplayLogic: class {
     func displayBookDetail(viewModel: BookDetail.FetchBook.ViewModel)
 }
 
-class BookDetailViewController: UIViewController, BookDetailDisplayLogic
-{
+class BookDetailViewController: UIViewController, BookDetailDisplayLogic {
     var interactor: BookDetailBusinessLogic?
     var router: (NSObjectProtocol & BookDetailRoutingLogic & BookDetailDataPassing)?
     
