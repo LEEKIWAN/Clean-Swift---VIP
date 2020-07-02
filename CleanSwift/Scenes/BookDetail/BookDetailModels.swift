@@ -12,26 +12,21 @@
 
 import UIKit
 
-enum BookDetail
-{
+enum BookDetail {
     // MARK: Use cases
     
-    enum FetchBook
-    {
-        struct Request
-        {
+    enum FetchBook {
+        struct Request {
             let id: Int
         }
         
-        struct Response: Codable
-        {
+        struct Response: Codable {
             let code: Int
             let message: String?
             let book: Book
         }
         
-        struct ViewModel
-        {
+        struct ViewModel {
             let book: Book
         }
     }

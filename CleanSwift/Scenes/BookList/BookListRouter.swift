@@ -20,8 +20,7 @@ protocol BookListDataPassing {
     var dataStore: BookListDataStore? { get }
 }
 
-class BookListRouter: NSObject, BookListRoutingLogic, BookListDataPassing
-{
+class BookListRouter: NSObject, BookListRoutingLogic, BookListDataPassing {
     weak var viewController: BookListViewController?
     var dataStore: BookListDataStore?
     
@@ -53,6 +52,7 @@ class BookListRouter: NSObject, BookListRoutingLogic, BookListDataPassing
     func passDataToBookDetail(source: BookListDataStore, destination: inout BookDetailDataStore) {
         if let indexPath = viewController?.tableView.indexPathForSelectedRow {
             destination.book = source.bookList!.list[indexPath.row]
+            viewController?.tableView.deselectRow(at: indexPath, animated: true)
         }
         
     }
